@@ -1,0 +1,206 @@
+/* Modal de advertencia de sesión */
+.session-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.session-modal {
+  background: white;
+  border-radius: 16px;
+  padding: 2.5rem;
+  max-width: 420px;
+  width: 90%;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: slideUp 0.3s ease-out;
+}
+
+.session-modal-header {
+  margin-bottom: 1.5rem;
+}
+
+.session-modal-icon-circle {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, #64D7DB 0%, #4FC3C7 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.session-modal-clock-icon {
+  width: 40px;
+  height: 40px;
+  color: white;
+}
+
+.session-modal h2 {
+  color: #333;
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.session-modal-message {
+  color: #666;
+  font-size: 1rem;
+  margin: 1rem 0 1.5rem 0;
+  line-height: 1.5;
+}
+
+.session-modal-countdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+  gap: 0.5rem;
+}
+
+.countdown-number {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #64D7DB;
+  line-height: 1;
+  animation: countdownPulse 1s infinite;
+}
+
+.countdown-label {
+  color: #999;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.session-modal-buttons {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.session-modal-btn {
+  flex: 1;
+  padding: 0.875rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.session-modal-btn-continue {
+  background: #64D7DB;
+  color: white;
+}
+
+.session-modal-btn-continue:hover {
+  background: #4FC3C7;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(100, 215, 219, 0.3);
+}
+
+.session-modal-btn-continue:active {
+  transform: translateY(0);
+}
+
+.session-modal-btn-logout {
+  background: white;
+  color: #666;
+  border: 1px solid #ddd;
+}
+
+.session-modal-btn-logout:hover {
+  background: #f8f9fa;
+  border-color: #bbb;
+  transform: translateY(-1px);
+}
+
+.session-modal-btn-logout:active {
+  transform: translateY(0);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes countdownPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .session-modal {
+    padding: 2rem 1.5rem;
+  }
+
+  .session-modal-icon-circle {
+    width: 64px;
+    height: 64px;
+  }
+
+  .session-modal-clock-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .session-modal h2 {
+    font-size: 1.5rem;
+  }
+
+  .countdown-number {
+    font-size: 3rem;
+  }
+
+  .session-modal-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .session-modal-btn {
+    width: 100%;
+  }
+}

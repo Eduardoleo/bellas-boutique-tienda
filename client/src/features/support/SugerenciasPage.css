@@ -1,0 +1,241 @@
+.sugerencias-page {
+  min-height: calc(100vh - 70px);
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.sugerencias-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sugerencias-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.sugerencias-header .back-btn {
+  float: left;
+  padding: 10px 20px;
+  background-color: #e9ecef;
+  color: #495057;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.sugerencias-header .back-btn:hover {
+  background-color: #dee2e6;
+  transform: translateX(-3px);
+}
+
+.sugerencias-header h1 {
+  color: #2c3e50;
+  font-size: 36px;
+  font-weight: 700;
+  margin: 0 0 10px 0;
+}
+
+.sugerencias-subtitle {
+  color: #6c757d;
+  font-size: 18px;
+  margin: 0;
+}
+
+.sugerencias-form {
+  background-color: white;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #64D7DB;
+  box-shadow: 0 0 0 4px rgba(100, 215, 219, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.form-group small {
+  display: block;
+  margin-top: 5px;
+  color: #6c757d;
+  font-size: 13px;
+}
+
+.info-box {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border-left: 4px solid #2196f3;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+.info-box p {
+  margin: 0 0 10px 0;
+  color: #1565c0;
+  font-size: 15px;
+}
+
+.info-box ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #1976d2;
+}
+
+.info-box li {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+.cancel-btn,
+.submit-btn {
+  padding: 14px 32px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancel-btn {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.cancel-btn:hover:not(:disabled) {
+  background-color: #dee2e6;
+  transform: translateY(-2px);
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #64D7DB 0%, #5ac5c9 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(100, 215, 219, 0.3);
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(100, 215, 219, 0.4);
+}
+
+.cancel-btn:disabled,
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.sugerencias-info {
+  background-color: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.sugerencias-info h3 {
+  color: #2c3e50;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 25px 0;
+  text-align: center;
+}
+
+.info-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.step {
+  text-align: center;
+}
+
+.step-number {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  background: linear-gradient(135deg, #64D7DB 0%, #5ac5c9 100%);
+  color: white;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.step-content h4 {
+  color: #2c3e50;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+}
+
+.step-content p {
+  color: #6c757d;
+  font-size: 14px;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .sugerencias-form {
+    padding: 25px;
+  }
+
+  .sugerencias-header h1 {
+    font-size: 28px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .cancel-btn,
+  .submit-btn {
+    width: 100%;
+  }
+
+  .info-steps {
+    grid-template-columns: 1fr;
+  }
+}

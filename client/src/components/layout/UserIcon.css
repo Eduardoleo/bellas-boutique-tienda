@@ -1,0 +1,27 @@
+.user-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s ease;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-icon:hover {
+  color: #64D7DB;
+}
+
+.user-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+@media (max-width: 768px) {
+  .user-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+}

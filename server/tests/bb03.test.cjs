@@ -1,0 +1,3 @@
+const test=require('node:test');const assert=require('node:assert/strict');const {quote}=require('../src/services/checkoutQuote');
+const db={get(sql,args,cb){cb(null,{id:args[0],name:'Producto ficticio',price:100,quantity:1000,reserved_quantity:0})}};
+test('BB-03 ignores client prices and preserves original shipping boundary',async()=>{let q=await quote(db,[{product_id:1,quantity:1,price:0.01}]);assert.equal(q.subtotal,100);assert.equal(q.envio,3000);assert.equal(q.total,3100);q=await quote(db,[{product_id:1,quantity:500,price:0}]);assert.equal(q.envio,3000);q=await quote(db,[{product_id:1,quantity:501,price:0}]);assert.equal(q.envio,0);});

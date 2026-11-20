@@ -1,0 +1,2 @@
+# Falso positivo revisado: constante sintética de prueba ("synthetic…"), no es una credencial.
+server/tests/bb10-backend.test.cjs:generic-api-key:13

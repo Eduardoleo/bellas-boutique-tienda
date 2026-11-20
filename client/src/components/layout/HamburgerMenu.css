@@ -1,0 +1,235 @@
+.hamburger-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.hamburger-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 25vw;
+  min-width: 420px;
+  max-width: 550px;
+  height: 100%;
+  background: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 35px 30px;
+  overflow-y: auto;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  border-right: 1px solid var(--gray-border);
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-md);
+}
+
+.close-btn:hover {
+  background: linear-gradient(135deg, var(--primary-hover) 0%, var(--primary-dark) 100%);
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: var(--shadow-lg);
+}
+
+.gender-selector {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 35px;
+  margin-top: 50px;
+}
+
+.gender-btn {
+  flex: 1;
+  padding: 14px 16px;
+  border: 2px solid var(--primary-color);
+  background-color: white;
+  color: var(--text-dark);
+  cursor: pointer;
+  border-radius: var(--border-radius-lg);
+  font-size: 16px;
+  font-weight: 600;
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.gender-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
+  transition: left var(--transition-base);
+  z-index: -1;
+}
+
+.gender-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-hover);
+}
+
+.gender-btn:hover:not(.active) {
+  color: var(--primary-dark);
+}
+
+.gender-btn.active {
+  color: white !important;
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-color);
+}
+
+.gender-btn.active::before {
+  left: 0;
+}
+
+.category-filters {
+  animation: fadeInCategories 0.4s ease-in-out;
+}
+
+@keyframes fadeInCategories {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.category-filters h3 {
+  margin-bottom: 20px;
+  color: var(--text-dark);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  padding-left: 4px;
+}
+
+.category-btn {
+  display: block;
+  width: 100%;
+  padding: 16px 22px;
+  margin-bottom: 12px;
+  border: 1px solid var(--gray-border);
+  background-color: white;
+  color: var(--text-dark);
+  cursor: pointer;
+  border-radius: var(--border-radius-md);
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all var(--transition-base);
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+
+.category-btn::after {
+  content: '→';
+  position: absolute;
+  right: 18px;
+  opacity: 0;
+  transition: all var(--transition-base);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.category-btn:hover {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
+  border-color: var(--primary-color);
+  color: white;
+  transform: translateX(8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.category-btn:hover::after {
+  opacity: 1;
+}
+
+.menu-footer {
+  margin-top: 35px;
+  padding-top: 25px;
+  border-top: 2px solid var(--gray-border);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-link-btn {
+  padding: 14px 18px;
+  background: linear-gradient(135deg, var(--gray-light) 0%, white 100%);
+  border: 1px solid var(--gray-border);
+  border-radius: var(--border-radius-md);
+  color: var(--primary-color);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-align: left;
+  box-shadow: var(--shadow-sm);
+}
+
+.footer-link-btn:hover {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-hover) 100%);
+  color: white;
+  border-color: var(--primary-color);
+  transform: translateX(8px);
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 1024px) {
+  .hamburger-menu {
+    width: 35vw;
+    min-width: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger-menu {
+    width: 70%;
+    min-width: 320px;
+    max-width: 420px;
+    padding: 25px 20px;
+  }
+  
+  .category-filters h3 {
+    font-size: 20px;
+  }
+  
+  .category-btn {
+    font-size: 15px;
+    padding: 14px 18px;
+  }
+}
+
+/* Contain legacy widths and animated controls inside the drawer. */
+.hamburger-menu .gender-selector{width:100%;min-width:0;}
+.hamburger-menu .gender-btn{min-width:0;width:auto;flex:1 1 0;}
+.hamburger-menu .category-btn{min-width:0;max-width:100%;overflow-wrap:anywhere;}
+.hamburger-menu .gender-btn.active{background:#126b75;}
+.hamburger-menu .category-btn:hover,.hamburger-menu .footer-link-btn:hover{transform:none;}
+@media(max-width:768px){.hamburger-menu{width:min(100%,380px);min-width:0;max-width:100vw;height:100dvh;overflow-x:hidden;overscroll-behavior:contain;}}

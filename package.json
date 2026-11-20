@@ -1,0 +1,40 @@
+{
+  "name": "bellas-boutique",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Bellas Boutique - E-commerce Fullstack Application (MVC Architecture)",
+  "scripts": {
+    "install:client": "cd client && npm install",
+    "install:server": "cd server && npm install",
+    "install:all": "npm run install:client && npm run install:server",
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "start:client": "cd client && npm run dev",
+    "start:server": "cd server && npm start",
+    "start": "concurrently \"npm run start:server\" \"npm run start:client\"",
+    "build:client": "cd client && npm run build",
+    "init-db": "cd server && npm run init-db",
+    "recreate-db": "cd server && npm run recreate-db",
+    "clean": "rimraf client/node_modules server/node_modules client/dist",
+    "seed-demo": "npm --prefix server run seed-demo",
+    "test": "npm --prefix server test",
+    "check-db": "npm --prefix server run check-db",
+    "migrate": "npm --prefix server run migrate"
+  },
+  "keywords": [
+    "ecommerce",
+    "fullstack",
+    "mvc",
+    "react",
+    "express",
+    "sqlite"
+  ],
+  "author": "",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "rimraf": "^6.1.4"
+  }
+}

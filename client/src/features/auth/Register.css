@@ -1,0 +1,262 @@
+.register-page {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #64D7DB 0%, #4fc5c9 50%, #3ab0b4 100%);
+}
+
+.register-container {
+  background-color: white;
+  padding: 50px 45px;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 700px;
+  width: 100%;
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.register-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.register-header h2 {
+  color: #2d3748;
+  margin-bottom: 8px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.register-header p {
+  color: #718096;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  color: #2d3748;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 14px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  background-color: #f7fafc;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #64D7DB;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(100, 215, 219, 0.15);
+}
+
+.form-group input.error,
+.form-group textarea.error {
+  border-color: #f56565;
+  background-color: #fff5f5;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+.error-text {
+  color: #e53e3e;
+  font-size: 12px;
+  margin-top: -4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.error-text::before {
+  content: '⚠';
+  font-size: 14px;
+}
+
+.password-requirements {
+  background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin: 10px 0;
+}
+
+.password-requirements p {
+  color: #2d3748;
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.password-requirements ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.password-requirements li {
+  color: #718096;
+  font-size: 13px;
+  padding-left: 24px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.password-requirements li::before {
+  content: '○';
+  position: absolute;
+  left: 4px;
+  color: #cbd5e0;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.password-requirements li.valid {
+  color: #38a169;
+  font-weight: 500;
+}
+
+.password-requirements li.valid::before {
+  content: '✓';
+  color: #38a169;
+}
+
+.submit-btn {
+  padding: 16px;
+  background: linear-gradient(135deg, #64D7DB 0%, #4fc5c9 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+  box-shadow: 0 4px 15px rgba(100, 215, 219, 0.4);
+  letter-spacing: 0.5px;
+}
+
+.submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(100, 215, 219, 0.6);
+  background: linear-gradient(135deg, #4fc5c9 0%, #3ab0b4 100%);
+}
+
+.submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.register-footer {
+  margin-top: 30px;
+  text-align: center;
+  padding-top: 20px;
+  border-top: 2px solid #e2e8f0;
+}
+
+.register-footer p {
+  color: #718096;
+  font-size: 15px;
+}
+
+.register-footer a {
+  color: #64D7DB;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.register-footer a:hover {
+  color: #4fc5c9;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .register-container {
+    padding: 35px 25px;
+  }
+
+  .register-header h2 {
+    font-size: 26px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .password-requirements {
+    padding: 14px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-page {
+    padding: 20px 15px;
+  }
+
+  .register-container {
+    padding: 30px 20px;
+  }
+
+  .register-header h2 {
+    font-size: 24px;
+  }
+
+  .register-form {
+    gap: 16px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 12px 14px;
+  }
+}
